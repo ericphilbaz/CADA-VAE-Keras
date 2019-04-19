@@ -5,7 +5,11 @@ Keras implementation of "Generalized Zero-and Few-Shot Learning via Aligned Vari
 - [Paper](https://arxiv.org/pdf/1812.01784.pdf)
 - [Original PyTorch implementation](https://github.com/edgarschnfld/CADA-VAE-PyTorch)
 
-Opposed to the paper, the losses are averaged (instead of summed) over each minibatch. This allows a more flexible batch size. For this, an additional weighting factor for the reconstruction loss is introduced.
+
+## Differences to PyTorch implementation
+
+- Losses are averaged (instead of summed) over each minibatch. This allows a more flexible batch size. For this, an additional weighting factor for the reconstruction loss is introduced.
+- Generalized Few-Shot and non-generalized Zero-Shot are not implemented.
 
 ## Requirements
 
@@ -19,8 +23,8 @@ scipy==1.1.0
 
 
 ## How to run the code
-1. [Download data](https://www.dropbox.com/sh/btoc495ytfbnbat/AAAaurkoKnnk0uV-swgF-gdSa?dl=0)
-2. Specify data_dir in main.py
+1. [Download data](https://www.dropbox.com/sh/btoc495ytfbnbat/AAAaurkoKnnk0uV-swgF-gdSa?dl=0) and specify data_dir in main.py
+2. Optionally change params in main.py
 3. Run main.py
 
 ## Experimental Protocol
@@ -66,5 +70,7 @@ AWA2     | 86.6 | 41.2 | 55.8 +/- 2.0
 
 - Drop weighting factor for reconstruction loss, optimize learning rate instead
 - Improve hyperparameter search over all datasets
+- Implement Generalized Few-Shot
+- Implement non-generalized Zero-Shot
 
 Currently, the work on this repo is discontinued.
